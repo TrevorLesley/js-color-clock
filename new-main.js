@@ -1,6 +1,6 @@
 const $clock = document.querySelector('.clock');
-const $clockDisplay = document.querySelector('.clock-display');
-const $clockProgressBar = document.querySelector('.clock-progress-bar');
+const $display = document.querySelector('.clock-display');
+const $progressBar = document.querySelector('.clock-progress-bar');
 
 let isHovering = false;
 
@@ -13,4 +13,23 @@ $clock.addEventListener('mouseout', function () {
 });
 
 
+function setDate() {
+    const now = new Date();
+    let hour, minutes, seconds;
+    if (isHovering) {
+        hour = ('0' + now.getHours().toString(16)).slice(-2);
+        minutes = ('0' + now.getMinutes().toString(16)).slice(-2);
+        secons = ('0' + now.getSeconds().toString(16)).slice(-2);
+    }
 
+    let displayTime = `${hour}:${minutes}:${seconds}`;
+    $display.innerHTML = displayTime;
+
+    console.log(seconds / 60);
+    $progressBar.getElementsByClassName.width = `${seconds / 60 * 14}rem`;
+
+
+
+}
+setInterval(setDate, 1000);
+setDate();
