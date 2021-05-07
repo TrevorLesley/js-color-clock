@@ -19,7 +19,11 @@ function setDate() {
     if (isHovering) {
         hour = ('0' + now.getHours().toString(16)).slice(-2);
         minutes = ('0' + now.getMinutes().toString(16)).slice(-2);
-        secons = ('0' + now.getSeconds().toString(16)).slice(-2);
+        seconds = ('0' + now.getSeconds().toString(16)).slice(-2);
+    } else {
+        hour = ('0' + now.getHours()).slice(-2);
+        minutes = ('0' + now.getMinutes()).slice(-2);
+        seconds = ('0' + now.getSeconds()).slice(-2);
     }
 
     let displayTime = `${hour}:${minutes}:${seconds}`;
